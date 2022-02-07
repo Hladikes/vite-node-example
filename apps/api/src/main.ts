@@ -1,14 +1,14 @@
-import { sum } from 'shared/math'
-import { getUtilMessage } from 'shared/util'
+import express from 'express'
 import { getData } from 'shared/request'
 
-console.log('Sum is', sum(420, 69))
-console.log('Util message', getUtilMessage())
+const app = express()
+const PORT = 8000
 
-getData()
-  .then(data => {
-    console.log('Response data', data)
-  })
-  .catch(err => {
-    console.log('Axios error', err)
-  })
+app.get('/', async (_, res) => {
+  const data = await getData()
+  res.json(data).end()
+})
+
+app.listen(PORT, () => {
+  console.log(`[i] Server is running at :${PORT}`)
+})

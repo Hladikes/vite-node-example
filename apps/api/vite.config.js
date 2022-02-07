@@ -11,7 +11,9 @@ module.exports = defineConfig({
       fileName: (format) => `main.${format}.js`,
     },
     rollupOptions: {
-      external: ['fs', 'axios']
+      // Since this is a node application, we don't have to resolve and bundle 
+      // dependencies such as fs, axios or express. They will get installed by npm install.
+      external: ['fs', 'axios', 'express']
     }
   }
 })
