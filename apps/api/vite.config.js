@@ -13,6 +13,7 @@ module.exports = defineConfig({
     rollupOptions: {
       // Since this is a node application, we don't have to resolve and bundle 
       // dependencies such as fs, axios or express. They will get installed by npm install.
+      // Only thing we want to get bundled and resolved is our shared package.
       external: ['fs', 'axios', 'express']
     }
   }
