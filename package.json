@@ -1,0 +1,21 @@
+{
+  "name": "monorepo-v1",
+  "version": "1.0.0",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:api": "npm run dev -w api",
+    "build:api": "npm run build -w api",
+    "start:api": "npm run start -w api",
+    "dev:web": "npm run dev -w web",
+    "build:web": "npm run build -w web"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.15"
+  }
+}
